@@ -13,12 +13,15 @@
                 var position = $(this).offset().top;
                 var windowHeight = $(window).height();
                 var middle = windowHeight / 2;
-                if (position < $(window).scrollTop() + middle) {
-                    $(this).css('opacity', '1');
+                var distance = middle - Math.abs(position - ($(window).scrollTop() + middle));
+                var opacity = distance / (middle);
+                if (opacity > 0) {
+                    $(this).css('opacity', opacity);
                 }
             });
         });
-    });</script>
+    });
+    </script>
 </head>
 <body>
     <br></br><p class="text">This will not be a nice experience at all. but an important one, because I know what it's like to live in a country where the rule of law doesn't exist.</p>
