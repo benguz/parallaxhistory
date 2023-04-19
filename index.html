@@ -28,21 +28,6 @@
                 $('#text-input').val('');
             });
     });
-    $(document).ready(function() {
-        $(window).scroll(function() {
-            $('.image').each(function() {
-                var position = $(this).offset().top;
-                var windowHeight = $(window).height();
-                var middle = windowHeight / 2;
-                var distance = middle - Math.abs(position - ($(window).scrollTop() + middle));
-                var opacity = Math.pow(distance / middle, 2); // Use exponent 3
-                if (opacity > 0) {
-                    $(this).css('opacity', opacity);
-                }
-            });
-        });
-    });
-    
     </script>
 </head>
 <body>
@@ -104,6 +89,7 @@
         <br></br><br></br>
         <br></br><br></br>
         <p class="text">So that makes me cross, actually.</p>
+        <br></br><br></br>
         <br></br><br></br>
         <br></br><br></br>
     <form id="add-text" class="text-white">
