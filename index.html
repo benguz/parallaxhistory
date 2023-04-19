@@ -7,49 +7,113 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>$(document).ready(function() {
+        $(window).scroll(function() {
+            $('.text-onload').css('opacity', '1');
+            $('.text').each(function() {
+                var position = $(this).offset().top;
+                var windowHeight = $(window).height();
+                var middle = windowHeight / 2;
+                var distance = middle - Math.abs(position - ($(window).scrollTop() + middle));
+                var opacity = Math.pow(distance / middle, 3); // Use exponent 3
+                if (opacity > 0) {
+                    $(this).css('opacity', opacity);
+                }
+            });
+        });
+        $('#add-text').submit(function(event) {
+                event.preventDefault();
+                var input = $('#text-input').val();
+                $('#text-container').append('<br></br><br></br><br></br><br></br><p class="text">' + input + '</p>');
+                $('#text-input').val('');
+            });
+    });
+    $(document).ready(function() {
+        $(window).scroll(function() {
+            $('.image').each(function() {
+                var position = $(this).offset().top;
+                var windowHeight = $(window).height();
+                var middle = windowHeight / 2;
+                var distance = middle - Math.abs(position - ($(window).scrollTop() + middle));
+                var opacity = Math.pow(distance / middle, 2); // Use exponent 3
+                if (opacity > 0) {
+                    $(this).css('opacity', opacity);
+                }
+            });
+        });
+    });
+    
+    </script>
 </head>
 <body>
-    <div>
-    <div id="content" >
-            <!-- Add your images in between the paragraphs as needed -->
-            <p class="text">In 1976 I spent some time in a South African jail. This was after the Soweto riots… I mean, I wasn’t charged or convicted with anything. I was just put in cold storage like the Russians do.</p>
-            <br></br>
-            <!-- ... -->
-    
-        <p class="text">I was 22 years old. I was a kid, you know, so. and I was politically active. You know I was part of the leadership of the University, and so on.</p>
-    
-    <br></br>
-</div>
-<nav id="nav"></nav>
-<div id="bucket">
-<p class="text">They turn up at four in the morning at your parents house and arrest you.</p>
+    <br></br><br></br>
+    <br></br><br></br>
+    <p class="text text-onload">In 1976, I spent some time in a South African jail.</p>
+            <br></br><br></br><br>
+            <br></br><br></br><br>
+            <br></br><br></br><br>
+    <p class="text"> I mean, I wasn’t charged or convicted with anything. I was just put in cold storage.</p>
+            <br></br><br></br>
+            <br></br><br></br>
+    <p class="text">I was 22 years old. I was a kid, you know, and I was politically active. I was part of the leadership of the University, and so on.</p>
+        <br></br><br></br>
+        <br></br><br></br>
+    <p class="text">They turn up at four in the morning at your parents' house and arrest you.</p>
 
-</div>
+    <br></br><br></br>
+    <br></br><br></br>
 
-<div id="content">
-    
-    <br></br>
-    
         <p class="text">I spent four days in jail. I was alone in the cell, so that was fine. But it's very disturbing to be in a place where you can't tell the difference between night and day at all, you know, for 4 days it's very disorienting.</p>
-    </div>
-    <div id="bucket">
-        <br></br><p class="text">There were 70 of us in this one cell block. not not no mixture with ordinary criminals, because they didn't want us to politicize ordinary criminals.</p>
-    </div>
 
-        <br></br><p class="text">This will not be a nice experience at all. but an important one, because I know what it's like to live in a country where the rule of law doesn't exist.</p>
-        <br></br><p class="text">You have a system in place, if you can imagine, where a white minority controls the upper offices of State, right? So government, police, military, and so on.</p>
-        <br></br><p class="text">You have 80% of the population not part of that system. And there's no room. This is a zero sum game, right? If the white say, okay, we're gonna open up the system. They are out of power.</p>
-        <br></br><p class="text">This was not a fight that was resolved in the sense that black people then became victorious, and there was victor's justice.</p>
-        <br></br><p class="text">What happened in South Africa was a negotiation. It was a stalemate, a political stalemate. The whites couldn't keep power anymore. They were losing global credibility.</p>
-        <br></br><p class="text">I was never harmed physically. This was a fight. We knew this was a fight, you know? This is not a party.</p>
-        <br></br><p class="text">The head of a very very big company is run by a South African… Richemont. And they bought that company on the basis of selling cigarettes in my hometown.</p>
-        <br></br><p class="text">There was recently a puff piece in the FT that the owners fought against Apartheid. Now that is a lie.</p>
-        <br></br><p class="text">The party Government introduced the Group Areas act, which is active residential segregation. They forcibly removed the black people living there, and my parents were removed like that.</p>
-        <br></br><p class="text">This company didn’t say a word about it! They have a lot of explaining to do, and they haven’t done it yet.</p>
-        <br></br><p class="text">So that makes me cross, actually.</p>
-    
-    
-    <div id="bucket"></div>
-    <script src="scripts.js"></script>
+        <br></br><br></br><p class="text">There were 70 of us in this one cell block. No mixture with ordinary criminals, because they didn't want us to politicize ordinary criminals.</p>
+
+        <br></br><br></br>
+        <br></br><br></br>
+
+        <p class="text">This will not be a nice experience at all. but an important one, because I know what it's like to live in a country where the rule of law doesn't exist.</p>
+        <br></br><br></br>
+        <br></br><br></br>
+        <p class="text">You have a system in place, if you can imagine, where a white minority controls the upper offices of state, right? So government, police, military, and so on.</p>
+        <br></br><br></br>
+        <br></br><br></br>
+        <p class="text">You have 80% of the population not part of that system. And there's no room. This is a zero sum game, right? If the whites say, okay, we're gonna open up the system: they are out of power.</p>
+        <br></br><br></br>
+        <br></br><br></br>
+        <p class="text">This was not a fight that was resolved in the sense that black people then became victorious, and there was victor's justice.</p>
+        <br></br><br></br>
+        <br></br><br></br>
+        <p class="text">What happened in South Africa was a negotiation. It was a stalemate, a political stalemate. The whites couldn't keep power anymore. They were losing global credibility.</p>
+        <br></br><br></br>
+        <br></br><br></br>
+        <p class="text">I was never harmed physically. This was a fight. We knew this was a fight, you know? This is not a party.</p>
+        <br></br><br></br>
+        <br></br><br></br>
+        <p class="text">You get arrested because of it, and it's not nice to be arrested, but I mean I don’t feel like I need to forgive people. What I do feel is people have to explain themselves.</p>
+        <br></br><br></br>
+        <br></br><br></br>
+        <p class="text">The head of a very very big company is run by a South African… Richemont. And they bought that company on the basis of selling cigarettes in my hometown.</p>
+        <br></br><br></br>
+        <br></br><br></br>
+        <p class="text">There was recently a puff piece in the FT that the owners fought against Apartheid. Now that is a lie.</p>
+        <br></br><br></br>
+        <br></br><br></br>
+        <p class="text">The party government introduced the Group Areas act, which is active residential segregation. They forcibly removed the black people living there, and my parents were removed like that.</p>
+        <br></br><br></br>
+        <br></br><br></br>
+        <p class="text">This company didn’t say a word about it! They have a lot of explaining to do, and they haven’t done it yet.</p>
+        <br></br><br></br>
+        <br></br><br></br>
+        <p class="text">So that makes me cross, actually.</p>
+        <br></br><br></br>
+        <br></br><br></br>
+    <form id="add-text" class="text-white">
+        <label class="text-white" for="text-input">Tell your story, one line at a time:</label>
+        <input type="text" id="text-input">
+        <button class="text-white" type="submit">Submit</button>
+    </form>
+    <div class="text-white"> What you write will appear below in order.</div>
+    <div id="text-container"></div>
+    <br></br><br></br>
+    <br></br><br></br>
+    <br></br><br></br>
 </body>
-</html>

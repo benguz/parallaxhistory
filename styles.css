@@ -1,42 +1,71 @@
 
-
 body {
-    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
     height: 100%;
     background: black;
 }
 
-#content {
-    background: black;
-    position: fixed;
-    height: 300px;
-    left: 0;
-    right: 0;
-    top: 0;
-}
-
-#nav {
-    margin: 0;
-    height: 50px;
-    background: #fff;
-    position: relative;
-}
-
-
-#bucket {
-    margin: 300px 0 0 0;
-    height: 400px;
-    background: white;
-    position: relative;
-}
 
 .text {
+    font-family: Georgia, serif;
+    font-size: 2em;
+    line-height: 1.5;
+    color: white;
+    margin: 50px 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.text-onload {
+    font-size: 2em;
+    opacity: 1;
+}
+
+.text-white {
     font-family: Georgia, serif;
     font-size: 1.5em;
     line-height: 1.5;
     text-align: justify;
-    color: lightgray;
+    color: white;
     margin: 50px 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+input[type="text"] {
+    color: white;
+    border: none;
+    font-family: Georgia, serif;
+    font-size: 1.5em;
+    line-height: 1.5;
+    border-bottom: 1px solid white;
+    background: transparent;
+    outline: none;
+    caret-color: white;
+}
+
+button[type="submit"] {
+    border: none;
+    font-family: Georgia, serif;
+    font-size: 1.5em;
+    line-height: 1.5;
+    background: transparent;
+    outline: 1px solid white;
+
+}
+
+button[type="submit"]:hover {
+    cursor: pointer;
+    color: white; /* change to a brighter white */
+
+}
+
+.image {
+    justify: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
     opacity: 0;
-    transition: opacity 2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
 }

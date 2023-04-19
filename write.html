@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Scrolling</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>$(document).ready(function() {
+        $('.text').each(function() {
+                $(this).css('opacity', '1');
+            });
+            var savedInputs = JSON.parse(localStorage.getItem('formInputs'));
+            if (savedInputs !== null) {
+                $('#text-container').empty();
+                for (var i = 0; i < savedInputs.length; i++) {
+                    $('#text-container').append('<br></br><br></br><br></br><br></br><p class="text">' + savedInputs[i] + '</p>');
+                }
+            }
+        });
+        $(window).scroll(function() {
+            $('.text').each(function() {
+                var position = $(this).offset().top;
+                var windowHeight = $(window).height();
+                var middle = windowHeight / 2;
+                var distance = middle - Math.abs(position - ($(window).scrollTop() + middle));
+                var opacity = Math.pow(distance / middle, 3); // Use exponent 3
+                if (opacity > 0) {
+                    $(this).css('opacity', opacity);
+                }
+            });
+        });
+        $('#add-text').submit(function(event) {
+                event.preventDefault();
+                var input = $('#text-input').val();
+                $('#text-container').append('<br></br><br></br><br></br><br></br><p class="text">' + input + '</p>');
+                $('#text-input').val('');
+                var savedInputs = JSON.parse(localStorage.getItem('formInputs'));
+            if (savedInputs === null) {
+                savedInputs = [];
+            }
+            savedInputs.push(input);
+            localStorage.setItem('formInputs', JSON.stringify(savedInputs));
+            });
+    
+    $(document).ready(function() {
+        $(window).scroll(function() {
+            $('.image').each(function() {
+                var position = $(this).offset().top;
+                var windowHeight = $(window).height();
+                var middle = windowHeight / 2;
+                var distance = middle - Math.abs(position - ($(window).scrollTop() + middle));
+                var opacity = Math.pow(distance / middle, 2); // Use exponent 3
+                if (opacity > 0) {
+                    $(this).css('opacity', opacity);
+                }
+            });
+        });
+    });
+    
+    </script>
+</head>
+<body>
+        <br></br><br></br>
+        <br></br><br></br>
+    <form id="add-text" class="text-white">
+        <label class="text-white" for="text-input">Tell your story, one line at a time:</label>
+        <input type="text" id="text-input">
+        <button class="text-white" type="submit">Submit</button>
+    </form>
+    <div class="text-white"> What you write will appear below in order.</div>
+    <div id="text-container"></div>
+    <br></br><br></br>
+    <br></br><br></br>
+    <br></br><br></br>
+</body>
